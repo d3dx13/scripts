@@ -1,12 +1,12 @@
 #!/bin/sh
 # scripts shell setup
 # affix colons on either side of $PATH to simplify matching
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 case ":${PATH}:" in
-    *:"${SCRIPT_DIR}/bin":*)
+    *:"${SCRIPTS_DIR}/bin":*)
         ;;
     *)
         # Prepending path in case a system-installed rustc needs to be overridden
-        export PATH="${SCRIPT_DIR}/bin:$PATH"
+        export PATH="${SCRIPTS_DIR}/bin:$PATH"
         ;;
 esac
